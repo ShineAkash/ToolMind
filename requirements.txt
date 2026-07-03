@@ -1,0 +1,27 @@
+# ── Web UI ─────────────────────────────────────────────────────────────────────
+streamlit>=1.32.0
+
+# ── Environment ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── LangChain core ─────────────────────────────────────────────────────────────
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-groq>=0.2.0
+langchain-huggingface>=0.1.0
+
+# ── LangGraph ──────────────────────────────────────────────────────────────────
+langgraph>=0.2.0
+langgraph-checkpoint-sqlite>=2.0.0
+langchain-mcp-adapters>=0.1.0
+
+# ── Vector store / embeddings (RAG) ────────────────────────────────────────────
+faiss-cpu>=1.8.0
+sentence-transformers>=3.0.0
+
+# ── Document loaders ───────────────────────────────────────────────────────────
+pypdf>=4.0.0
+
+# ── Search tool (DuckDuckGo) ───────────────────────────────────────────────────
+duckduckgo-search>=6.0.0
