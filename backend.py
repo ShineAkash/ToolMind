@@ -18,6 +18,10 @@ if not MCP_MATH_URL:
         "Streamlit Cloud secrets (deployed)."
     )
 
+# Default model — change via GROQ_MODEL in .env if a model is deprecated/removed
+DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
+GROQ_MODEL = os.getenv("GROQ_MODEL", DEFAULT_GROQ_MODEL)
+
 SERVERS = {
     "math-mcp": {
         "transport": "streamable-http",
@@ -79,7 +83,7 @@ def coerce_tool_args(tool, args: dict) -> dict:
 
 
 def build_graph(all_tools: list):
-    llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct")
+    llm = ChatGroq(model=GROQ_MODEL)
     llm_with_tools = llm.bind_tools(all_tools)
 
     # named_tools: MCP tools are async, rag_search is sync
